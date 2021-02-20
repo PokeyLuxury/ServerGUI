@@ -20,8 +20,8 @@ while True:
 window.close()
 
 b = open(f"{values['-fd-']}/start.bat", 'w')
-b.write(f"java -Xmx{values[0]}M -Xms{values[1]}M -jar {values[2]} nogui pause")
-
+mr = [f"java -Xmx{values[0]}M -Xms{values[1]}M -jar {values[2]} nogui\n", "pause"]
+b.writelines(mr)
 b.close()
 
 e = open(f"{values['-fd-']}/eula.txt", "w")
